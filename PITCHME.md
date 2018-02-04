@@ -144,18 +144,49 @@ x = [1, 2, 3] # x è una lista
 
 +++
 
+Questo non significa che Python è _type free_
 
-Esercizio: estrarre da DBpedia tutte le triple che riguardano Palermo
+```python
+x = 1 	      # x è un intero 
+type(x)
+x = 'hello'   # x è una stringa 
+type(x)
+x = [1, 2, 3] # x è una lista
+type(x)
+```
 
 +++
 
-```sql
-SELECT ?predicato ?oggetto 
-WHERE { 
-	<http://dbpedia.org/resource/Palermo> ?predicato ?oggetto . 
-} 
+In Python, ogni cosa è un oggetto, questo significa che ogni entità ha attributi e metodi a essa associati. 
+Gli attributi e i metodi vengono richiamati con la sintassi detta _dot syntax (.)_
+
+Questo sembra ovvio per le liste (es. append), ma vale anche per i tipi semplici.
+
+es:
+```python
+x=4.5
+print(x.real, "+", x.imag, 'i')
+x = 4.5
+x.is_integer()
 ```
 
++++
+
+## Operatori
+
++++
+
+|Operator	|Name	|Description |
+|-----------|-------|------------|
+|a + b	|Addition	|Sum of a and b|
+|a - b	|Subtraction	|Difference of a and b|
+|a * b	|Multiplication	|Product of a and b|
+|a / b	|True division	|Quotient of a and b|
+|a // b	|Floor division	|Quotient of a and b, removing fractional parts|
+|a % b	|Modulus	|Integer remainder after division of a by b|
+|a ** b	|Exponentiation	|a raised to the power of b|
+|-a	|Negation	|The negative of a|
+|+a	|Unary plus	|a unchanged (rarely used)|
 +++
 
 Ci sono tutte?
