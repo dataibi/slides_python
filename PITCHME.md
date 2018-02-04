@@ -1,4 +1,3 @@
-# Python
 
 ![Logo](assets/python_orig.png)
 
