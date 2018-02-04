@@ -1,6 +1,6 @@
 # Python
 
-![Logo](assets/pyhton_orig.png)
+![Logo](assets/python_orig.png)
 
 +++ 
 
