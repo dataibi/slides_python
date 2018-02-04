@@ -183,101 +183,139 @@ x.is_integer()
 |a * b	|Multiplication	|Product of a and b|
 |a / b	|True division	|Quotient of a and b|
 |a // b	|Floor division	|Quotient of a and b, removing fractional parts|
+
++++
+
+|Operator	|Name	|Description |
+|-----------|-------|------------|
 |a % b	|Modulus	|Integer remainder after division of a by b|
 |a ** b	|Exponentiation	|a raised to the power of b|
 |-a	|Negation	|The negative of a|
 |+a	|Unary plus	|a unchanged (rarely used)|
-+++
-
-Ci sono tutte?
 
 +++
 
-```sql
-								
-SELECT ?soggetto ?predicato 
-WHERE { 
-	?soggetto ?predicato <http://dbpedia.org/resource/Palermo> . 
-} 
+|Operator	|Name	|Description |
+|-----------|-------|------------|
+|a & b	|Bitwise AND	|Bits defined in both a and b |
+|a pipe b	|Bitwise OR	|Bits defined in a or b or both |
+|a ^ b	|Bitwise XOR	|Bits defined in a or b but not both |
+|a << b	|Bit shift left	|Shift bits of a left by b units|
+|a >> b	|Bit shift right	|Shift bits of a right by b units|
+|~a	|Bitwise NOT	|Bitwise negation of a|
+
++++
+
+|Operation	|Description		|Operation	Description|
+|-----------|-------------------|----------------------|
+|a == b	|a equal to b		|a != b	a not equal to b|
+|a < b	|a less than b		|a > b	a greater than b|
+|a <= b	|a less than or equal to b	|	a >= b	a greater than or equal to b|
+
++++
+
+Tipi semplici
+
+| Tipo	| Esempio |	Descrizione |
+|-------|---------|-------------|
+| int	|x = 1	  |numeri interi  |
+|float	|x = 1.0  |	numeri reali |
+|complex|	x = 1 + 2j	| numeri complessi |
+|bool	|x = True |	booleani |
+|str	|x = 'abc'|	Stringhe |
+|NoneType|	x = None  |null |
+
++++
+
+Gli interi Python sono un po' più sofisticati dei numeri interi in altri linguaggi come C. In C gli interi sono a precisione fissa, e di solito raggiungono un overflow a valori vicino a $2^{31}$ o $2^{63}$. Gli interi in Python sono a precisione variabili, ciò consente di calcoli che in altri linguaggi porterebbero ad un overflow:
+
+```python
+x = 2
+2 ** 200
+
 ```
 
 +++
 
-	DESCRIBE <http://dbpedia.org/resource/Palermo>
+Una caratteristica di Python (nota: versione 3) è che la divisione tra interi per default viene considerata come tipo floating-point:
+
+In: 5/2
+Out: 2.5
 
 +++
 
-Esercizio: Tutte le chiese con Architettura gotica a Palermo
+Promemoria sui floating point:
+
+La precisione dell'aritmentica floating-point è limitata, questo fa si che i testi di uguaglianza sono instabili. 
+
+0.1+0.2==0.3 ?
+
+N.B. Questo comportamento non dipende dal python!
 
 +++
 
-```sql
-SELECT ?chiesa 
-WHERE { 
-	?chiesa dbp:architectureStyle dbr:Gothic_architecture .
-	?chiesa dct:subject dbc:Churches_in_Palermo
-} 
+Numeri complessi:
+
+```python
+c = 3 + 4j
+c.real
+c.imag
+c.conjugate()
+abs(c)  # sqrt(c.real ** 2 + c.imag ** 2)
 ```
 
 +++
 
-Trova la differenza
-
-+++
-
-```sql
-SELECT ?label
-WHERE { 
-	?chiesa dbp:architectureStyle dbr:Gothic_architecture .
-	?chiesa dct:subject dbc:Churches_in_Palermo .
-	?chiesa rdfs:label ?label
-} 
-```
-
-+++
-
-e la descrizione?
-
-+++
-```sql
-SELECT ?chiesa ?abstract
-WHERE { 
-	?chiesa dbp:architectureStyle dbr:Gothic_architecture .
-	?chiesa dct:subject dbc:Churches_in_Palermo .
-       ?chiesa dbo:abstract ?abstract
-}
+Stringhe:
+```python
+s="Open Data"
+s*3
+s+" "+b
+len(s)
+s.upper()
+s.lower()
+s.find("open")
+s.capitalize()
+s.lower().find("open")
 ```
 +++
 
-```sql
-SELECT ?chiesa ?abstract
-WHERE { 
-	?chiesa dbp:architectureStyle dbr:Gothic_architecture .
-	?chiesa dct:subject dbc:Churches_in_Palermo .
-       ?chiesa dbo:abstract ?abstract .
-       FILTER (langMatches(lang(?abstract), "RU")) .
-}
+Attenzione agli operatori sulle stringhe:
+```python
+s+5
+s+str(5)
 ```
++++
+
+Nota: le variabili non possono avere come nome le **Parole riservate**
+
+and
+assert
+break
+class
+continue  else
+def       except
+del       exec
+elif      finally
+for      import    not
+from     in        or
+global   is        pass
+if       lambda    print
+raise
+return
+try
+while
 
 +++
 
-### DBpedia relation finder
+### Strutture Dati (built-in)
 
-http://www.visualdataweb.org/relfinder.php
-
-+++
-
-## Query su Camera dei Deputati
-http://dati.camera.it/sparql
-
-+++
-
-### Tutte le legislature
-```sql
-	SELECT ?leg WHERE {
-		?leg a ocd:legislatura
-	} 
-```
+| Nome | Esempio               | Descrizione                         |
+|------|-----------------------|-------------------------------------|
+| list | [1, 2, 3]             | Collezione mutabile di elementi     |
+| tuple| (1, 2, 3)             | Collezione immutabile di elementi   |
+| dict | {'a':1, 'b':2, 'c':3} | Mappa non ordinata (chiave, valore) |
+| set  | {1, 2, 3}             | Insiemi non ordinato di valori unici|
 
 +++
 
