@@ -11,7 +11,7 @@ Una cosa accomuna Google, Star Wars e la Nasa:
 
 Quale versione? 
 
-![Logo](assets/python-2-vs-python-3)
+![Logo](assets/python-2-vs-python-3.png)
 
 +++
 
