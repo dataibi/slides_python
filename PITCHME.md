@@ -1,19 +1,17 @@
 
-una cosa accomuna Google, Star Wars e la Nasa: 
+## Tecniche per la Gestione degli Open Data
+
++++
+
+Una cosa accomuna Google, Star Wars e la Nasa: 
 
 ![Logo](assets/python_orig.png)
 
 +++ 
 
-## Introduzione
-
-
-gggg
-
-
-+++
-
 Quale versione? 
+
+![Logo](assets/python-2-vs-python-3)
 
 +++
 
