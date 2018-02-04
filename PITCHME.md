@@ -1,4 +1,6 @@
 
+una cosa accomuna Google, Star Wars e la Nasa: 
+
 ![Logo](assets/python_orig.png)
 
 +++ 
