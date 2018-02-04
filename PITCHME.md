@@ -41,7 +41,7 @@ Python 2.7 è ancora mantenuto, quindi è possibile scegliere una o l'altra vers
 
 ---
 
-Installare Python
+## Installare Python
 
 +++
 
@@ -55,79 +55,53 @@ Ci sono due versioni della distribuzione di Anaconda:
 
 +++
 
+https://www.anaconda.com/download/
+
++++
+
 ```sql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX dbo: <http://dbpedia.org/ontology/>
-								
-SELECT ?author ?work  
-WHERE { 
-	?author a dbo:Writer . 
-	?author dbo:notableWork ?work 
-} ORDER BY(?author) LIMIT 1000 
+
+conda install ipython-notebook
+
+```
+
+---
+
+## Iniziamo
+
++++
+
+Alcune note di sintassi
+* Commenti
+* Terminare una istruzione 
+* Indentare il codice (non solo per leggibilità)
+
++++
+
+## Varibili e oggetti
+
++++
+
+Assegnare il valore ad una variabile:
+
+```python
+x = 4
 ```
 
 +++
 
-Ma _non è che_ possiamo navigare il grafo con la query?
+Note:
+* Diffrenze con altri linguaggi di programmazione 
+* Puntatori
 
 +++
 
-```sql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX dbo: <http://dbpedia.org/ontology/>
-								
-SELECT ?author ?work ?date
-WHERE { 
-	?author a dbo:Writer . 
-	?author dbo:notableWork ?work .
-        ?work dbo:premiereDate ?date
-} LIMIT 1000 
+Python è _dynamically-typed_
+
 ```
-
-+++
-
-Ma _non è che_ l'ordinamento vale anche per le date?
-
-+++
-
-```sql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX dbo: <http://dbpedia.org/ontology/>
-								
-SELECT ?author ?work ?date
-WHERE { 
-	?author a dbo:Writer . 
-	?author dbo:notableWork ?work .
-        ?work dbo:premiereDate ?date
-} ORDER BY DESC(?date) LIMIT 1000 
-```
-
-+++
-
-Quante opere per ogni autore?
-
-+++
-
-```sql
-SELECT ?author count(?work) 
-WHERE { 
-	?author a dbo:Writer . 
-	?author dbo:notableWork ?work 
-} GROUP BY ?author LIMIT 1000
-```
-
-+++
-
-Si ma ... chi è l'autore con più opere?
-
-+++
-
-```sql
-SELECT ?author count(?work) as ?numopere
-WHERE { 
-	?author a dbo:Writer . 
-	?author dbo:notableWork ?work 
-} GROUP BY ?author ORDER BY DESC(?numopere) LIMIT 1000
+x = 1 	      # x è un intero 
+x = 'hello'   # x è una stringa 
+x = [1, 2, 3] # x è una lista
 ```
 
 +++
