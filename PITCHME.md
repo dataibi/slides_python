@@ -1,5 +1,7 @@
 # Python
 
+![Logo](assets/pyhton_orig.png)
+
 +++ 
 
 ## Introduzione
