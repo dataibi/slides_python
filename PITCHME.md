@@ -19,39 +19,39 @@ Ci sono attualmente due diverse versioni di Python: Python 2.x e Python 3.x.
 
 Le differenze tra le versioni sono importanti, quindi non c'è compatibilità tra il codice scritto in Python 2.x e quello scritto in Python 3.x. 
 
-Python 3.x è stato introdotto alla fine del 2008; a quel tempo moltissime librerie erano già state distribuite usando Python 2.x (Python 2.0 fu introdotto nel 2000).
++++
 
-Gran parte della comunità  di sviluppatori non è passata immediatamente a Python 3.0 ed è rimasta fedele a Python 2.7. 
+Python 2.0 fu introdotto nel 2000
 
-Ad oggi quasi tutte le librerie più importanti sono state portate su Python 3.0 
+Python 3.0 è stato introdotto alla fine del 2008. A quel tempo moltissime librerie erano già state distribuite usando Python 2.
+
+Gran parte della comunità  di sviluppatori non è passata immediatamente a Python 3.0 ed è rimasta "fedele" a Python 2.7. 
+
+Ad oggi quasi tutte le librerie più importanti sono state portate su Python 3
 
 Python 2.7 è ancora mantenuto, quindi è possibile scegliere una o l'altra versione.
 
 +++
 
-## Web Integrated Development Environment (WIDE)
+## Integrated Development Environment (IDE)
 
+### IDE comuni (PyCharm, Spider, ...)
 
-+++
+### Web Integrated Development Environment (WIDE)
 
-prefissi predefiniti
+---
 
-+++
-
-```sql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX dbo: <http://dbpedia.org/ontology/>
-								
-SELECT ?author ?work  
-WHERE { 
-	?author a dbo:Writer . 
-	?author dbo:notableWork ?work 
-} LIMIT 1000 
-```
+Installare Python
 
 +++
 
-Ma _non è che_ si può avere in ordine alfabetico? 
+![Logo](assets/logo-anaconda.png)
+
++++
+
+Ci sono due versioni della distribuzione di Anaconda:
+* _Miniconda_ fornisce l'interprete Python, e anche uno strumento da riga di comando chiamato _conda_ che funge da gestore di pacchetti multipiattaforma, simile agli strumenti _apt_ o _yum_ che usano gli utenti Linux.
+* _Anaconda_ include sia Python che _conda_ e in aggiunta include una suite di altri pacchetti preinstallati orientati verso l'elaborazione scientifica.
 
 +++
 
