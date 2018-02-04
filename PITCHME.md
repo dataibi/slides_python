@@ -90,15 +90,53 @@ x = 4
 
 +++
 
-Note:
-* Diffrenze con altri linguaggi di programmazione 
-* Puntatori
+Diffrenze con altri linguaggi di programmazione: 
+* Varibili come puntatori
+* Python è _dynamically-typed_
+
++++
+
+Conseguenze delle variabili come puntatori
+
+```python
+x=[1,2,3] 
+y=x
+print(y)
+x.append(4) # inseriamo 4 alla lista puntata da x 
+print(y)
+```
+
++++
+
+```python
+x = 'una stringa' 
+print(y) # y non cambia
+```
+
++++
+
+Che succede se...
+
+```python
+x=10 
+y=x
+x += 5
+print("x =", x)
+print("y =", y)
+```
++++
+
+Numberi, stringhe, e altri tipi semplici sono immutabili.
+
+Quando chiamiamo x += 5 non stiamo modificando il valore 5 dell'oggetto puntato da x, ma piuttosto stiamo cambiando l'oggetto a cui x punta. 
+
+Per questo motivo il valore di y non è influenzato da questa operazione.
 
 +++
 
 Python è _dynamically-typed_
 
-```
+```python
 x = 1 	      # x è un intero 
 x = 'hello'   # x è una stringa 
 x = [1, 2, 3] # x è una lista
@@ -106,18 +144,6 @@ x = [1, 2, 3] # x è una lista
 
 +++
 
-```sql
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX dbo: <http://dbpedia.org/ontology/>
-								
-SELECT ?author ?work  
-WHERE { 
-	?author a dbo:Writer . 
-	OPTIONAL {?author dbo:notableWork ?work}  
-} LIMIT 1000 
-```
-
-+++
 
 Esercizio: estrarre da DBpedia tutte le triple che riguardano Palermo
 
