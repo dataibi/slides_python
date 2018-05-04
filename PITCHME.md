@@ -1,5 +1,6 @@
 
-## Tecniche per la Gestione degli Open Data
+## Corso Python
+### Contact & Sales S.r.l. e Ineko srl
 
 +++
 
@@ -26,6 +27,8 @@ Python 2.0 fu introdotto nel 2000
 Python 3.0 è stato introdotto alla fine del 2008. A quel tempo moltissime librerie erano già state distribuite usando Python 2.
 
 Gran parte della comunità  di sviluppatori non è passata immediatamente a Python 3.0 ed è rimasta "fedele" a Python 2.7. 
+
++++
 
 Ad oggi quasi tutte le librerie più importanti sono state portate su Python 3
 
